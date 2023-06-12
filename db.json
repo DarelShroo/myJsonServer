@@ -1,8 +1,847 @@
 {
-    "users": [
+  "title": "Autum LifeScore Survey",
+  "focusFirstQuestionAutomatic": false,
+  "questionErrorLocation": "bottom",
+  "questions": [
+    {
+      "id": "GH1",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
         {
-            "email": "cls18drl@gmail.com",
-            "otp": "123456"
+          "name": "GH1",
+          "title": "What is your relationship status?",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 2,
+          "choices": [
+            {
+              "value": 0,
+              "text": "Widowed",
+              "ability_to_change": "33%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
         }
-    ]
+      ],
+      "messages": [
+        {
+          "text": "The stress and loneliness of losing a loved one is significant and can last many years.  A few good friends or family members can help.  Consider some form of grief therapy."
+        }
+      ]
+    },
+    {
+      "id": "GH2",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "GH2",
+          "title": "When did you get your last flu vaccine?",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 2,
+          "choices": [
+            {
+              "value": 0,
+              "text": "I haven't",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "An annual flu vaccine is recommended, especially for those with a compromised immune system. And it's free."
+        }
+      ]
+    },
+    {
+      "id": "GH3",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fFit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "GH3a",
+          "title": "What is your Unit's System",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 0,
+          "choices": [
+            {
+              "value": 0,
+              "text": "International System of Units",
+              "units": [
+                {
+                  "GH3h": [
+                    {
+                      "text": "centimeters",
+                      "unit": "cm"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": 1,
+              "text": "British Imperial System",
+              "units": [
+                {
+                  "GH3h": [
+                    {
+                      "text": "Feet",
+                      "unit": "ft"
+                    },
+                    {
+                      "text": "Inches",
+                      "unit": "in"
+                    }
+
+                  ]
+                }
+              ]
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        },
+        {
+          "name": "GH3h",
+          "title": "What is your height?",
+          "clarification": "",
+          "control_type": "numeric",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 0,
+          "choices": [],
+          "depends_on": "GH3a.units",
+          "calculation": {}
+        },
+        {
+          "name": "GH3w",
+          "title": "What is your weight?",
+          "clarification": "",
+          "control_type": "numeric",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 0,
+          "choices": [],
+          "depends_on": "GH3a.units",
+          "calculation": {}
+        },
+        {
+          "name": "BMI",
+          "title": "BMI (Body Mass Index)",
+          "clarification": "",
+          "control_type": "numeric",
+          "type": "calculation",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 4,
+          "choices": [],
+          "calculation": {
+            "0": {
+              "formula": "(GH3w / GH3h)^2"
+            },
+            "1": {
+              "formula": "((703 * GH3w) / GH3h)^2"
+            },
+            "results": [
+              {
+                "value": 3,
+                "text": "BMI 19 - 25",
+                "result": {
+                  "operator": "btw",
+                  "value": [
+                    19,
+                    25
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "messages": [
+        {
+          "text": "Whilst BMI is not the best measure, it is showing you are carrying excess weight, which adds a significant health risk of diabetes, heart issues and joint problems. Consider a weight watchers class, or speak to your GP about other options."
+        }
+      ]
+    },
+    {
+      "id": "GH4",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "GH4",
+          "title": "When did you last smoke?",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 7,
+          "choices": [
+            {
+              "value": 0,
+              "text": "Current smoker",
+              "ability_to_change": "50%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Smoking is one of the major health risks and more than doubles your risk of premature death.  Think about how you could quit.  Otherwise, think about switching to a vap style product. But unless you quit, other actions only reduce the risk, that do not entirely eliminate the risk."
+        }
+      ]
+    },
+    {
+      "id": "GH5",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "GH5",
+          "title": "In a typical week how many portions of vegetables do you eat per day?",
+          "clarification": "A portion typically equates to two handfuls of vegetables.",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 2,
+          "choices": [
+            {
+              "value": 0,
+              "text": "< 1",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Consider how to add vegetables to your diet."
+        }
+      ]
+    },
+    {
+      "id": "GH6",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "GH6",
+          "title": "In a typical week, how many units of alcohol do you drink?",
+          "clarification": "Whilst strength of drinks vary in strength, a typical pint of beer or medium glass of wine is 2 units and a single measure of spirits is one unit.",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 2,
+          "choices": [
+            {
+              "value": 2,
+              "text": "0",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Think about reducing your alcohol intake."
+        }
+      ]
+    },
+    {
+      "id": "GH7",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "GH6",
+          "title": "In a typical night, how many hours sleep do you get without sleeping tablets?",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 2,
+          "choices": [
+            {
+              "value": 0,
+              "text": "<6, or you use sleeping tablets",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Review your sleeping habits.  Perhaps go to bed earlier?"
+        }
+      ]
+    },
+    {
+      "id": "GH8",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "GH8",
+          "title": "What is your systolic blood pressure?",
+          "clarification": "Systolic blood pressure is the higher reading from a blood pressure monitor.  Always remember to take the average of 3 readings",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 2,
+          "choices": [
+            {
+              "value": 0,
+              "text": "> 150",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Review your sleeping habits.  Perhaps go to bed earlier?"
+        }
+      ]
+    },
+    {
+      "id": "GH9",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "GH9",
+          "title": "What is your total cholesterol level (mmol/l)?",
+          "clarification": "Total cholesterol is the overall amount of cholesterol in your blood, including both \"good\" and \"bad\" cholesterol.",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 2,
+          "choices": [
+            {
+              "value": 1,
+              "text": "don’t know",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Review your sleeping habits.  Perhaps go to bed earlier?"
+        }
+      ]
+    },
+    {
+      "id": "PM1",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "PM1",
+          "title": "In a typical day, how many steps do you take?",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 2,
+          "choices": [
+            {
+              "value": 0,
+              "text": "<2,000",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Review your sleeping habits.  Perhaps go to bed earlier?"
+        }
+      ]
+    },
+    {
+      "id": "PM2",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "PM2",
+          "title": "What is your resting heart rate?",
+          "clarification": "Your resting heart rate is the number of heart beats per minute when you are sitting down and feeling relaxed.  All wearables show this number.  Otherwise count your heart beats by resting your your index finger against your wrist, using your watch for 15 seconds and then multiply that number by 4.",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 2,
+          "choices": [
+            {
+              "value": 0,
+              "text": "> 100",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Your heart rate is on the high side. This should be your resting heart rate. If you were anxious this could explain the increased number. Check and if it is at this level, you should speak to your GP."
+        }
+      ]
+    },
+    {
+      "id": "PM3",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "PM3",
+          "title": "In a typical week, how many times do you exercise moderately or vigorously for at least 20 min?",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 4,
+          "choices": [
+            {
+              "value": 0,
+              "text": "0",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Exercise is incredibly important for physical and mental health.  Think about how you can change your routine to include regular exercise.  Of course, start slowly and build up.  If you have any health concerns speak to yoru GP first."
+        }
+      ]
+    },
+    {
+      "id": "PM4",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "PM3",
+          "title": "In a typical week, how often do you exercise your brain for at least 10 min (e.g. bridge or book clubs, learning a language, crosswords or brain games)?",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 3,
+          "choices": [
+            {
+              "value": 0,
+              "text": "0",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Exercising your brain is as important as exercising your body.  Whilst exercising your body improves performance, exercising your brain strengthens neural pathways and helps build new ones slowing down cognitive decline."
+        }
+      ]
+    },
+    {
+      "id": "PM5",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "PM5",
+          "title": "In a typical week, how many times do you participate in a least 10 minutes of meditation or yoga?",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 3,
+          "choices": [
+            {
+              "value": 0,
+              "text": "0",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "We all need to pause from our busy schedules to clear and calm our minds.  Meditation or yoga benefits your emotional well-being and overall health.  10 minutes each day is typically a good length, but you should build up tp this. Think about how you can change your habits so that you can get this small but valuable quality time each day."
+        }
+      ]
+    },
+    {
+      "id": "SA1",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "SA1",
+          "title": "In a typical week, how many different family, friends or club / community members do you see or speak to for more than 10 mins?",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 3,
+          "choices": [
+            {
+              "value": 0,
+              "text": "0",
+              "ability_to_change": "0%"
+            },
+            {
+              "value": 1,
+              "text": "1 - 2",
+              "ability_to_change": "100%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "Family, friends and others in our community play a significant role in promoting our overall health.  The lack of social interaction is a good indicator of loneliness and possible depression.  If you are feeling low, speak to your GP.  Otherwise, think about your interests and where you may meet similar people to you."
+        }
+      ]
+    },
+    {
+      "id": "SA2",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "SA2",
+          "title": "How close is your best relationship with either your partner, family or friends?",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 3,
+          "choices": [
+            {
+              "value": 0,
+              "text": "I don't have any real close relationships",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": [
+        {
+          "text": "It's not just about how the relationships you have, but the quality of those relationships.  The saying a problem shared is a problem halved is so true.  If you haven't found the right person, think about joining a group or dating service.  If you have found the right person, try sharing some of your concerns with them and see how they respond."
+        }
+      ]
+    },
+    {
+      "id": "SA3",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "SA3",
+          "title": "In a typical day how many times do you laugh aloud",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 3,
+          "choices": [
+            {
+              "value": 0,
+              "text": "< 1",
+              "ability_to_change": "0%"
+            },
+            {
+              "value": 1,
+              "text": "1 - 2 times",
+              "ability_to_change": "0%"
+            },
+            {
+              "value": 2,
+              "text": "2 - 3 times",
+              "ability_to_change": "67%"
+            },
+            {
+              "value": 3,
+              "text": ">3 times",
+              "ability_to_change": "0%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": []
+    },
+    {
+      "id": "SA4",
+      "image": {
+        "name": "pic_n",
+        "width": "180px",
+        "min_width": "180px",
+        "max_width": "180px",
+        "image_url": "",
+        "image_link": "",
+        "content_mode": "image",
+        "image_fit": "cover",
+        "image_height": 80,
+        "image_width": 180
+      },
+      "data": [
+        {
+          "name": "SA4",
+          "title": "How meaningful is your life to the wellbeing of either your partner, your family (e.g. grandchildren), friends, or your community?",
+          "clarification": "",
+          "control_type": "radio",
+          "type": "question",
+          "title_location": "left",
+          "allow_clear": false,
+          "weight": 3,
+          "choices": [
+            {
+              "value": 0,
+              "text": "My life does not impact on the wellbeing of others",
+              "ability_to_change": "0%"
+            },
+            {
+              "value": 1.5,
+              "text": "My life makes a limited contribution to supporting my partner, family (e.g. grandchildren), friends of the community",
+              "ability_to_change": "67%"
+            }
+          ],
+          "depends_on": "",
+          "calculations": []
+        }
+      ],
+      "messages": []
+    }
+  ]
 }
